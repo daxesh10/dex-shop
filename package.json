@@ -1,0 +1,19 @@
+{
+  "name": "shopping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "dex",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "express": "^4.15.4",
+    "mysql": "^2.14.1",
+    "npm": "^5.3.0",
+    "path": "^0.12.7"
+  }
+}

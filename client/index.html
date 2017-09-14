@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<title>dex shoping cart</title>
+<base href="/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<!--firebase-->
+<script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    
+    <!--animations scripts-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css"> 
+        <!--load WOW js from CDN-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+         
+            <!--bootstrap-->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">     
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          
+ <script src="js/app.js"></script>
+<link rel="stylesheet" href="/style/style.css">
+<body class="w3-content" style="max-width:1200px" ng-app="firstApplication" ng-controller="myctrl">
+
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:0;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <h3 class="w3-wide"><b>Shop</b></h3>
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+   
+    <a href="/" class="w3-bar-item w3-button">jeans</a>  
+    <a href="/shirts" class="w3-bar-item w3-button">Shirts</a>
+    <a href="/dress" class="w3-bar-item w3-button">Dresses</a>
+  </div>
+
+  <a href="/contact" class="w3-bar-item w3-button w3-padding">Contact</a> 
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
+  <a href="/"  class="w3-bar-item w3-button w3-padding">back</a>
+</nav>     
+
+
+
+                                                 <!--content -->
+
+
+
+                                                 <!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Top header -->
+  
+  <header class="w3-container w3-xlarge" ng-init="showOrder=false">
+    
+    <p class="w3-left">wellcome !!</p>
+    <p class="w3-right">
+    <a ng-click="showOrders()" class="fa fa-shopping-cart w3-margin-right">{{cartStatus}}</a>
+      <i class="fa fa-search"></i>
+    </p>
+  </header>
+
+  <!-- Image header -->
+  <div class="w3-display-container w3-container">
+    <img src="http://dreamstop.com/wp-content/uploads/2017/06/shopping-dream-meaning.jpg" alt="Jeans" style="width:100%">
+    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+      <!--<h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
+      <h1 class="w3-hide-large w3-hide-medium"></h1>
+      <h1 class="w3-hide-small">COLLECTION 2016</h1>-->
+      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">{{dev}}</a></p>
+    </div>
+  </div>
+
+<br>
+<br>
+<hr>
+<br>
+
+    <div ng-show="showOrder" class="jumbotron" style="background-image: url('http://mikemichalowicz.com//wp-content/uploads/2013/03/Corporate-GIfts.jpg');">
+    <div orders></div>
+    </div>
+
+
+
+<ng-view></ng-view>
+
+
+<div news-letter></div>

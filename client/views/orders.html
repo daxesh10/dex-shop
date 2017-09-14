@@ -1,0 +1,48 @@
+
+<div class="container">
+  <div class="well">
+
+
+<h2>your Order </h2>
+
+<h4>Items: <strong>{{cartStatus}}</strong></h4>
+<h4 ng-if="cartStatus>0" class="primary">TOTAL:{{cartTotal}}</h4>
+
+
+  <table ng-if="cartStatus>0" ng-init="cartTotal" class="table table-striped table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Item Name</th>
+      <th>size</th>
+      <th>color</th>
+      <th>quantity</th>
+      <th>price</th>
+      <th>  </th>
+    </tr>
+  </thead>
+ 
+ 
+  <tbody>
+    <tr ng-repeat="item in cart">
+      <th scope="row">1</th>
+      <td>{{item.productName}}</td>
+      <td>{{item.size}}</td>
+      <td>{{item.color}}</td>
+      <td>{{item.quantity}}</td>
+      <td class="product-price">{{item.quantity * item.productPrice}}</td>
+      <td><a href="#" ng-click="removeItem($index)">x</a>
+    </tr>
+    
+  </tbody>
+</table>
+
+</div>
+</div>
+<div>
+  <br>
+  <br>
+  <hr>
+  <br>
+  <br>
+</div>

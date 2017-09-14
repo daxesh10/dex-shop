@@ -1,0 +1,42 @@
+<div class="w3-col l3 s6">
+             <margin></margin>
+             <div class="w3-container" ng-repeat="item in shirtItem1">
+                 
+                 <img style="max-width:250px;max-height:250px" ng-src="{{item.itemImage}}">
+                 <p>{{item.itemName}} <b>${{item.itemPrice}}</b></p>
+                     
+                     <br> <details>                
+                     <summary><strong> Info.</strong></summary>
+                     <p>{{item.itemDesc}}</p>
+                     </details>  
+                     
+             <div>
+            <label>Size</label>
+            <select id="size" ng-model="size">               
+            <option ng-repeat="si in item.itemSize" ng-selected="{{si}}" value="{{si}}">{{si}}</option>  
+            </select>
+            </div>  
+
+
+            <div>
+            <label>Color</label>
+            <select id="color" ng-model="color">               
+            <option ng-repeat="co in item.itemColor" ng-selected="{{co}}" value="{{co}}">{{co}}</option>  
+            </select>
+            </div>
+
+              <div>
+            <label>quantity</label>
+            <select id="quan" ng-model="quantity">               
+            <option ng-repeat="quan in item.itemQuantity" ng-selected="{{quan}}" value="{{quan}}">{{quan}}</option>  
+            </select>
+            </div>
+
+                <button class="w3-button" ng-click="addToCart('Mega Ripped Jeans','19.99',size,color,quantity)">Buy <i class="fa fa-shopping-cart"></i></button>
+       
+                <br>
+                <br>
+             </div>  
+             <br>
+                <br>      
+             </div>   
